@@ -27,18 +27,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column              | Type   | Options     |
-| ------------------- | ------ | ----------- |
-| nickname            | string | null: false |
-| email               | string | null: false |
-| password            | string | null: false |
-| last_name           | string | null: false |
-| first_name          | string | null: false |
-| last_name_kana      | string | null: false |
-| first_name_kana     | string | null: false |
-| user_birthday_year  | string | null: false |
-| user_birthday_month | string | null: false |
-| user_birthday_day   | string | null: false |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
+| user_birthday      | date   | null: false               |
 
 ### Association
 
@@ -47,17 +45,17 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column               | Type       | Options     |
-| -------------------- | -----------| ----------- |
-| item_name            | text       | null: false |
-| item_text            | text       | null: false |
-| item_category        | string     | null: false |
-| item_sale_status     | string     | null: false |
-| item_shipping_fee    | string     | null: false |
-| item_shipping_area   | string     | null: false |
-| days_to_ship         | string     | null: false |
-| item_price           | string     | null: false |
-| user                 | references | null: false, foreign_key: true |
+| Column           | Type       | Options                        |
+| ---------------- | -----------| ------------------------------ |
+| name             | text       | null: false                    |
+| text             | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| sale_status_id   | integer    | null: false                    |
+| shipping_fee_id  | integer    | null: false                    |
+| shipping_area_id | integer    | null: false                    |
+| days_to_ship_id  | integer    | null: false                    |
+| price            | string     | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -83,7 +81,7 @@ Things you may want to cover:
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| postal_code   | string     |                                |
+| postal_code   | string     | null: false                    |
 | prefectures   | string     | null: false                    |
 | city          | string     | null: false                    |
 | address       | string     | null: false                    |
