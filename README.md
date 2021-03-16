@@ -52,7 +52,7 @@ Things you may want to cover:
 | category_id      | integer    | null: false                    |
 | sale_status_id   | integer    | null: false                    |
 | shipping_fee_id  | integer    | null: false                    |
-| shipping_area_id | integer    | null: false                    |
+| prefectures_id   | integer    | null: false                    |
 | days_to_ship_id  | integer    | null: false                    |
 | price            | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
@@ -79,15 +79,15 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| postal_code   | string     | null: false                    |
-| prefectures   | string     | null: false                    |
-| city          | string     | null: false                    |
-| address       | string     | null: false                    |
-| buliding_name | string     |                                |
-| tel           | string     | null: false                    |
-| buy           | references | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| --------------  | ---------- | ------------------------------ |
+| postal_code    | string     | null: false                    |
+| prefectures_id | integer    | null: false                    |
+| city           | string     | null: false                    |
+| address        | string     | null: false                    |
+| buliding_name  | string     |                                |
+| tel            | string     | null: false                    |
+| buy            | references | null: false, foreign_key: true |
 
 ### Association
 
