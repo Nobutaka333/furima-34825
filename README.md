@@ -54,7 +54,7 @@ Things you may want to cover:
 | shipping_fee_id  | integer    | null: false                    |
 | prefectures_id   | integer    | null: false                    |
 | days_to_ship_id  | integer    | null: false                    |
-| price            | string     | null: false                    |
+| price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 
@@ -80,7 +80,7 @@ Things you may want to cover:
 ## addresses テーブル
 
 | Column         | Type       | Options                        |
-| --------------  | ---------- | ------------------------------ |
+| -------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
 | prefectures_id | integer    | null: false                    |
 | city           | string     | null: false                    |
