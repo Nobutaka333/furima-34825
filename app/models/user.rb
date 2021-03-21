@@ -23,4 +23,5 @@ class User < ApplicationRecord
       with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は6文字以上かつ英数字をそれぞれ含めてください'
     }
   end
+  has_many :items
 end
