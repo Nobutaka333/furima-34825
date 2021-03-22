@@ -26,27 +26,27 @@ RSpec.describe Item, type: :model do
       it 'category_idが---では登録できない' do
         @item.category_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 0")
+        expect(@item.errors.full_messages).to include('Category must be other than 0')
       end
       it 'sale_status_idが---では登録できない' do
         @item.sale_status_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Sale status must be other than 0")
+        expect(@item.errors.full_messages).to include('Sale status must be other than 0')
       end
       it 'shipping_fee_idが---では登録できない' do
         @item.shipping_fee_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping fee must be other than 0")
+        expect(@item.errors.full_messages).to include('Shipping fee must be other than 0')
       end
       it 'prefectures_idが---では登録できない' do
         @item.prefectures_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectures must be other than 0")
+        expect(@item.errors.full_messages).to include('Prefectures must be other than 0')
       end
       it 'days_to_ship_idが---では登録できない' do
         @item.days_to_ship_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Days to ship must be other than 0")
+        expect(@item.errors.full_messages).to include('Days to ship must be other than 0')
       end
 
       it 'pliceが空では登録できない' do
@@ -58,31 +58,31 @@ RSpec.describe Item, type: :model do
       it 'pliceが300円未満では登録できない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid")
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'pliceが10000000円以上では登録できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid")
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'pliceが半角英数混合では登録できないこと' do
         @item.price = '300a'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid")
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'pliceが半角英語だけでは登録できないこと' do
         @item.price = 'apple'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid")
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'pliceが全角数字の場合は登録できないこと' do
         @item.price = '３００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid")
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'imageが空の場合は保存ができないこと' do
@@ -90,7 +90,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
-      
     end
   end
 end
