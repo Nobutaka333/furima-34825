@@ -5,7 +5,7 @@ FactoryBot.define do
     category_id { 1 }
     sale_status_id { 1 }
     shipping_fee_id { 1 }
-    prefectures_id { 1 }
+    prefecture_id { 1 }
     days_to_ship_id { 1 }
     price       { 300 }
     association :user
