@@ -62,7 +62,7 @@ Things you may want to cover:
 
 - has_one :buy
 - belongs_to :user
-
+ 
 
 ## buys テーブル
 
