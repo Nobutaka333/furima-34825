@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
 
   describe '出品新規登録' do
     context '出品登録できるとき' do
-      it 'image,name,text,category_id,sale_status_id,shipping_fee_id,prefectures_id,days_toship_id,price,user_idが存在すれば登録できる' do
+      it 'image,name,text,category_id,sale_status_id,shipping_fee_id,prefecture_id,days_toship_id,price,user_idが存在すれば登録できる' do
         expect(@item).to be_valid
       end
     end
@@ -38,10 +38,10 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping fee must be other than 0')
       end
-      it 'prefectures_idが---では登録できない' do
-        @item.prefectures_id = 0
+      it 'prefecture_idが---では登録できない' do
+        @item.prefecture_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include('Prefectures must be other than 0')
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 0')
       end
       it 'days_to_ship_idが---では登録できない' do
         @item.days_to_ship_id = 0
