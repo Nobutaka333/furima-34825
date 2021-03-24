@@ -87,8 +87,8 @@ Things you may want to cover:
 | address        | string     | null: false                    |
 | buliding_name  | string     |                                |
 | tel            | string     | null: false                    |
-| order            | references | null: false, foreign_key: true |
+| order          | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :buy
+- belongs_to :order
