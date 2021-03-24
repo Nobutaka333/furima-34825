@@ -64,7 +64,7 @@ Things you may want to cover:
 - belongs_to :user
  
 
-## buys テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
