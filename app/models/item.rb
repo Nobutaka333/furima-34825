@@ -27,4 +27,5 @@ class Item < ApplicationRecord
     image.attached?
   end
   belongs_to :user
+  has_one :order
 end
