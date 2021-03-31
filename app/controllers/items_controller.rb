@@ -21,17 +21,15 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-      @item.destroy
-      redirect_to root_path
+    @item.destroy
+    redirect_to root_path
   end
 
   def show
   end
 
   def edit
-    unless @item.order.nil? 
-      redirect_to root_path
-    end
+    redirect_to root_path unless @item.order.nil?
   end
 
   def update
