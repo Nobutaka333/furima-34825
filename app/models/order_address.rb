@@ -3,15 +3,14 @@ class OrderAddress
   attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :address, :building_name, :tel, :order_id, :token
 
   with_options presence: true do
-    validates :postal_code
+    validates :token
+    validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
+    validates :prefecture_id, numericality: { other_than: 0 }
     validates :city
     validates :address
-    validates :tel
+    validates :tel, numericality: {only_integer: true}, length: { maximum: 11 }
     validates :user_id
     validates :item_id
-    with_options numericality: { other_than: 0 } do
-      validates :prefecture_id
-    end
   end
 
   def save
