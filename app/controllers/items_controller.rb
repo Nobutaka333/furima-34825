@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path unless @item.order.nil?
   end
 
   def update
