@@ -96,6 +96,25 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Tel is not a number')
       end
+
+      it 'telが12文字以上だと保存できないこと' do
+        @order_address.tel = '090123456789'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include('Tel is too long (maximum is 11 characters)')
+      end
+
+      it 'user_idが空だと保存できないこと' do
+        @order_address.user_id = ''
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("User can't be blank")
+      end
+
+      it 'item_idが空だと保存できないこと' do
+        @order_address.item_id = ''
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Item can't be blank")
+      end
+
     end
   end
 end
